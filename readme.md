@@ -71,11 +71,11 @@ http://localhost:8080---------------
 ⚠ Optional: Allow Insecure Registry (For Local Only)
 If pushing fails due to insecure registry, on Linux edit:
 ---
-sudo vi /etc/docker/daemon.json
-Add:
-{
-}
+- sudo vi /etc/docker/daemon.json
+- Add:
+- {
 "insecure-registries": ["localhost:5000"]
+}
 
 ---
 - Then restart Docker:
