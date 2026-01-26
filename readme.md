@@ -21,17 +21,17 @@ docker ps
 Open your browser and visit http://<EC2-Public-IP> to access the running 
 application.
 
----
+
 # Setting up pvt docker registry using docker compose 
 
 sudo apt-get update
 sudo apt-get install docker-compose-plugin
 sudo apt  install docker-compose
 
----
+
 mkdir docker-registry-frontend
 cd docker-registry-frontend
-vi docker-compose.yml----
+vi docker-compose.yml
 version: '3'
 services:
   registry:
@@ -52,9 +52,9 @@ services:
     depends_on:
       - registry
       
---------------------
+
 docker-compose up -d
------
+
 �
 � Docker Registry (API):
 http://localhost:5000/v2/_catalog
@@ -62,11 +62,11 @@ http://localhost:5000/v2/_catalog
 http://localhost:8080---------------
 
 #Push an Image
----
+
 docker pull alpine
 docker tag alpine localhost:5000/my-alpine
 docker push localhost:5000/my-alpine
----
+
 #if incase of issue in pushing the image do below
 Then refresh http://localhost:8080 to see the image listed.----
 ⚠ Optional: Allow Insecure Registry (For Local Only)
@@ -78,7 +78,7 @@ Add:
 "insecure-registries": ["localhost:5000"]
 Then restart Docker:
 sudo systemctl restart 
----
+
 registry:2
 5000
 registry-frontend
